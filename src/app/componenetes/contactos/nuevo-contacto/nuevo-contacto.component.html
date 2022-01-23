@@ -1,0 +1,44 @@
+<div class="container-fluid mt-2">
+    <header class="py-2 bg-dark bg-opacity-70 text-white" id="main-header">
+        <div class="row m-lg-2">
+            <h1>
+                <i class="fas fa-user"></i> Nuevo Contacto
+            </h1>
+        </div>
+    </header>
+</div>
+<div class="container-fluid"><p-messages></p-messages></div>
+
+<form #contactoForm="ngForm" (ngSubmit)="CrearContacto(contactoForm)">
+    <section id="details">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <div class="card bg-black-alpha-20">
+                        <div class="card-body">
+                            <label class="form-label">Nombre Contacto</label>
+                            <div class="input-group mb-3">
+                                <input type="text" [(ngModel)]="Contacto.Nombre" name="Nombre" #Nombre="ngModel" class="form-control" placeholder="Mario">
+                                <input type="text" [(ngModel)]="Contacto.Apellido_1" name="Apellido_1" #Apellido_1="ngModel" class="form-control" placeholder="Borrego">
+                                <input type="text" [(ngModel)]="Contacto.Apellido_2" name="Apellido_2" #Apellido_2="ngModel" class="form-control" placeholder="Rodríguez">
+                            </div>
+
+                            <div class="mb-3">
+                                <label id="Telefono">Telefono</label>
+                                <input type="number" [(ngModel)]="Contacto.Telefono" name="Telefono" #Telefono="ngModel" class="form-control">
+                            </div>
+
+                            <div class="mb-3">
+                                <label id="Email">Email</label>
+                                <input type="text" [(ngModel)]="Contacto.Email" name="Email" #Email="ngModel" class="form-control">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Crear Contacto</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>

@@ -1,0 +1,26 @@
+
+<p-table [value]="contactos">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Id Contacto</th>
+            <th>Nombre</th>
+            <th>Telefono</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+    </ng-template>
+    <ng-template let-contacto pTemplate="body">
+        <tr (click)="verContacto(contacto)">
+            <td>{{contacto.Id_Contacto}}</td>
+            <td>{{contacto.Nombre}}</td>
+            <td>{{contacto.Telefono}}</td>
+            <td>{{contacto.Email}}</td>
+            <td>
+                <span class="p-buttonset">
+                    <button icon="fa-edit"  class="p-button-sm p-button-outlined p-button-rounded" label="Editar" pButton type="button"></button>
+                    <button icon="fa-trash" class="p-button-sm p-button-outlined p-button-rounded" label="Eliminar" pButton type="button"></button>
+                </span>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
